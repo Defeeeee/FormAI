@@ -20,3 +20,6 @@ in order to reach the desired stance / movement.
 [@elmUffins](https://github.com/elmUffins) - Eric Gerzenstein <br>
 [@juanpanpanyz](https://github.com/juanpanpanyz) - Juan Baader <br>
 [@dansegal17](https://github.com/dansegal17) - Dan Segal
+
+## License
+Fōrm © 2024 by Eric Gerzenstein, Federico Diaz Nemeth, Juan Baader and Dan Segal is licensed under CC BY-SA 4.0 
