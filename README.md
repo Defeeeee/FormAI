@@ -1,5 +1,5 @@
-# Form - EN
-Form is a web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise. 
+# Fōrm - EN
+Fōrm is a web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise. 
 
 ## General Overview
 It does this through a camera with the use of the python library OpenCV (computer vision) which tracks the user's joints,
