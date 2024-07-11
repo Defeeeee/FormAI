@@ -1,4 +1,4 @@
-# Fōrm - EN
+# FōrmAI - EN
 Fōrm is a web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise. 
 
 ## General Overview
@@ -22,4 +22,4 @@ in order to reach the desired stance / movement.
 [@dansegal17](https://github.com/dansegal17) - Dan Segal
 
 ## License
-Fōrm © 2024 by Eric Gerzenstein, Federico Diaz Nemeth, Juan Baader and Dan Segal is licensed under CC BY-SA 4.0 
+FōrmAI © 2024 by Eric Gerzenstein, Federico Diaz Nemeth, Juan Baader and Dan Segal is licensed under the BSD-3-Clause license
