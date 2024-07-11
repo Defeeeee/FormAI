@@ -4,7 +4,7 @@
 
 [![Commit Check](https://github.com/commit-check/commit-check-action/actions/workflows/commit-check.yml/badge.svg)](https://github.com/Defeeeee/FormAI/actions/workflows/commit-check.yml)
 
-# Fōrm
+# FōrmAI
 
 A web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise.
 
