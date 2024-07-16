@@ -16,9 +16,9 @@ It does this through a camera with the use of the python library OpenCV (compute
 
 **Back-end:** Javascript, Node, Express, MySQL
 
-**Front-end** Javascript, NextJS
+**Front-end:** Javascript, NextJS
 
-**UX/UI** Figma
+**UX/UI:** Figma
 ## Authors
 - [@Defeeeee](https://github.com/Defeeeee) - Federico Diaz Nemeth 
 - [@elmUffins](https://github.com/elmUffins) - Eric Gerzenstein 
