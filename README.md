@@ -7,12 +7,16 @@
 <br>
 A web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise.
 
-## Overview
+## Overview 🇬🇧
 
-It does this through a camera with the use of the python library OpenCV (computer vision) which tracks the user's joints, comparing their movement with already loaded footage from which the AI model bases its judgement. The AI will spot any major differences between the user's technique and the dataset and will point out what is wrong and what needs to be done in order to reach the desired stance / movement.
+The main idea is to track the user's joints using Google MediaPipe, comparing their movement with already loaded footage from which the AI model bases its judgement. The AI will spot any major differences between the user's technique and the dataset and will point out what is wrong and what needs to be done in order to reach the desired stance / movement.
+
+## Overview 🇦🇷
+La idea principal del proyecto es, a base de localizar las articulaciones del usuario y comparar la pose con la base de datos del modelo de ML. Este modelo localiza las diferencias y le indica al usuario qué es lo que está haciendo mal y como corregirlo.
+
 ## Tech Stack
 
-**IA:** Python 3, OpenCV
+**IA:** Python 3, MediaPipe, Flask, TensorFlow, Numpy
 
 **Back-end:** Javascript, Node, Express, MySQL
 
