@@ -11,10 +11,12 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
+# Define which landmarks to exclude (face landmarks)
+EXCLUDED_LANDMARKS = list(range(0, 11))  # 0 to 10 inclusive
+
 def generate_frames(camera_id=0):
     cap = cv2.VideoCapture(camera_id)
 
-    # Check if camera opened successfully
     if not cap.isOpened():
         app.logger.error(f"Error: Could not open camera with ID {camera_id}")
         return
@@ -23,34 +25,58 @@ def generate_frames(camera_id=0):
         success, image = cap.read()
         if not success:
             app.logger.warning("Ignoring empty camera frame.")
-            continue  # Skip empty frames
+            continue
 
         # Pose Detection and Landmark Extraction
         image.flags.writeable = False
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         results = pose.process(image)
 
+        # Filtered Landmarks
         landmarks = []
         if results.pose_landmarks:
-            for landmark in results.pose_landmarks.landmark:
-                landmarks.append({
-                    'x': landmark.x, 'y': landmark.y, 'z': landmark.z, 'visibility': landmark.visibility
-                })
+            for id, landmark in enumerate(results.pose_landmarks.landmark):
+                if id not in EXCLUDED_LANDMARKS:
+                    landmarks.append({
+                        'id': id,
+                        'x': landmark.x,
+                        'y': landmark.y,
+                        'z': landmark.z,
+                        'visibility': landmark.visibility
+                    })
+
+                    # Display (x, y) coordinates on image (only for non-excluded landmarks)
+                    image_height, image_width, _ = image.shape
+                    x_px = int(landmark.x * image_width)
+                    y_px = int(landmark.y * image_height)
+                    cv2.putText(
+                        image,
+                        str(id) + f' ({x_px}, {y_px})',
+                        (x_px + 5, y_px),
+                        cv2.FONT_HERSHEY_SIMPLEX,
+                        0.5,
+                        (0, 0, 255),
+                        2
+                    )
 
         # Pose Analysis and Feedback (Placeholder)
         feedback = analyze_pose(landmarks)
 
-        # Skeleton Markings (Alternative Method)
+        # Skeleton Markings (Only Non-Excluded Landmarks)
         image.flags.writeable = True
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        mp_drawing.draw_landmarks(
-            image,
-            results.pose_landmarks,
-            mp_pose.POSE_CONNECTIONS,
-            # Custom drawing options
-            mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=2, circle_radius=2),  # Red dots
-            mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=2)  # Green lines
-        )
+        if results.pose_landmarks:
+            # Filter landmarks and connections
+            landmark_subset = [lm for i, lm in enumerate(results.pose_landmarks.landmark) if i not in EXCLUDED_LANDMARKS]
+            connections_subset = [(a - len(EXCLUDED_LANDMARKS), b - len(EXCLUDED_LANDMARKS)) for a, b in mp_pose.POSE_CONNECTIONS if a not in EXCLUDED_LANDMARKS and b not in EXCLUDED_LANDMARKS]
+
+            mp_drawing.draw_landmarks(
+                image,
+                landmark_subset,
+                connections_subset,
+                mp_drawing.DrawingSpec(color=(255, 0, 0), thickness=2, circle_radius=2),
+                mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=2)
+            )
 
         # Prepare Data for Sending
         data = {'landmarks': landmarks, 'feedback': feedback}
@@ -67,14 +93,13 @@ def generate_frames(camera_id=0):
 
 # Placeholder for your pose analysis logic
 def analyze_pose(landmarks):
-    # Replace with your sophisticated pose analysis logic
-    # Compare to ideal pose, calculate angles, distances, etc.
+    # ... (Your pose analysis logic here)
     feedback = "This is where your AI-generated feedback would go."
     return feedback
 
 @app.route('/video_feed/<int:camera_id>')
 def video_feed(camera_id):
-    app.logger.info(f"Connecting to camera waith ID {camera_id}")
+    app.logger.info(f"Connecting to camera with ID {camera_id}")
     return Response(generate_frames(camera_id),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
