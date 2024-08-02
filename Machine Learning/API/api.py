@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
+api = FastAPI()
 
 
 # Placeholder route, future routes will be added here
@@ -11,4 +11,4 @@ def check():
 
 
 if __name__ == '__main__':
-    uvicorn.run(app)
+    uvicorn.run(api)
