@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "./Machine Learning/API/(.*)",
-      "dest": "api.py"
+      "src": "/(.*)",
+      "dest": "Machine Learning/API/api.py"
     }
   ]
 }
