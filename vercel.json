@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "./Machine Learning/API/api.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/Machine Learning/API/(.*)",
+      "dest": "api.py"
+    }
+  ]
+}
