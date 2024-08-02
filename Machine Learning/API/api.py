@@ -5,7 +5,7 @@ api = FastAPI()
 
 
 # Placeholder route, future routes will be added here
-@app.get('/')
+@api.get('/')
 def check():
     return 1
 
