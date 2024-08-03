@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "./Machine Learning/API/api.py",
+      "src": "./API/api.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "Machine Learning/API/api.py"
+      "dest": "API/api.py"
     }
   ]
 }
