@@ -2,7 +2,6 @@
 
 <img src="https://github.com/user-attachments/assets/00931eda-1efb-4da2-be12-f5f7ab0af75d" width="250">
 
-<br>
 
 <br>
 A web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise.
