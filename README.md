@@ -4,7 +4,6 @@
 
 <br>
 
-<br>
 A web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise.
 
 ## Overview ![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png "English")
