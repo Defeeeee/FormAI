@@ -7,11 +7,11 @@
 <br>
 A web-based project with the sole purpose of teaching you how to improve your technique when performing an exercise.
 
-## Overview ᴇɴ
+## Overview ![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png "English")
 
 The main idea is to track the user's joints using Google MediaPipe, comparing their movement with already loaded footage from which the AI model bases its judgement. The AI will spot any major differences between the user's technique and the dataset and will point out what is wrong and what needs to be done in order to reach the desired stance / movement.
 
-## Overview ᴇꜱ
+## Overview ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spanish")
 La idea principal del proyecto es, a base de localizar las articulaciones del usuario y comparar la pose con la base de datos del modelo de ML. Este modelo localiza las diferencias y le indica al usuario qué es lo que está haciendo mal y como corregirlo.
 
 ## Tech Stack
