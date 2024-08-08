@@ -9,6 +9,7 @@ export const client = new Client({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     port: 3000,
+    ssl: true
 });
 
 client.connect(); 
