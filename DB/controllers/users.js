@@ -22,10 +22,28 @@ const createUser = async (req, res) => {
     res.json(user)
 };
 
+const updateUser = async (req, res) => {
+
+    const nombre = req.body
+    const id = req.params.id
+    await conn.query("UPDATE artistas SET nombre = ? WHERE id = $1", [nombre, id])
+
+    res.json(nombre)
+};
+
+const deleteUser = async (req, res) => {
+
+    const id = req.params.id
+    await conn.query("DELETE FROM artistas WHERE id = $1", [id])
+    res.json(id)
+};
+
 const users = {
     getUsers,
     getUser,
-    createUser
+    createUser,
+    updateUser,
+    deleteUser
 };
 
 export default users;
