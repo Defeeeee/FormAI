@@ -1,1 +1,5 @@
-// blank
+const ejercicios = {
+
+}
+
+export default ejercicios;
