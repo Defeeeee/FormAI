@@ -1,3 +1,6 @@
 [submodule "FormAI-Back"]
 	path = FormAI-Back
 	url = https://github.com/elmUffins/FormAI-Back
+[submodule "FormAI-ML"]
+	path = FormAI-ML
+	url = https://github.com/Defeeeee/FormAI-ML
