@@ -16,7 +16,7 @@ La idea principal del proyecto es, a base de localizar las articulaciones del us
 
 ## Tech Stack
 
-**IA:** Python 3, MediaPipe, Flask, TensorFlow, Numpy
+**IA:** Python 3, MediaPipe, FastAPI, TensorFlow, Numpy
 
 **Back-end:** Javascript, Node, Express, MySQL
 
