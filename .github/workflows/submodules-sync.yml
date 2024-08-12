@@ -19,7 +19,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        token: ${{ secrets.CI_TOKEN }}
+        token: ${{ secrets.CI_TOKEN_ERIC }}
         submodules: true
 
     # Update references
@@ -32,5 +32,5 @@ jobs:
       run: |
         git config --global user.name 'elmUffins'
         git config --global user.email 'ericyes81007@gmail.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git remote set-url origin https://x-access-token:${{ secrets.CI_TOKEN_ERIC }}@github.com/${{ github.repository }}
         git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
