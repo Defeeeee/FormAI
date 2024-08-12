@@ -18,7 +18,7 @@ La idea principal del proyecto es, a base de localizar las articulaciones del us
 
 **IA:** Python 3, MediaPipe, FastAPI, TensorFlow, Numpy
 
-**Back-end:** Javascript, Node, Express, MySQL
+**Back-end:** Javascript, Node, Express, PostgreSQL
 
 **Front-end:** Javascript, NextJS
 
