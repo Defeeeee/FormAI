@@ -4,3 +4,6 @@
 [submodule "FormAI-ML"]
 	path = FormAI-ML
 	url = https://github.com/Defeeeee/FormAI-ML
+[submodule "FormAI-Front"]
+	path = FormAI-Front
+	url = https://github.com/Defeeeee/FormAI-Front
